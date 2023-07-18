@@ -20,6 +20,7 @@ namespace StrategeRisk.WebApp.Controllers
 
             return View(companies.Select(x=> new CompanyRowViewModel
             {
+                Id = x.Id,
                 City = x.City.Name,
                 Name = x.Name,
                 Phone= x.Phone,

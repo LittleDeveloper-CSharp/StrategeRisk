@@ -43,7 +43,7 @@ namespace StrategeRisk.Application.Services
 
         public async Task<IEnumerable<Note>> GetAsync(int companyId)
         {
-            return await _repository.FindByAsync(x => x.Company.Id == companyId);
+            return await _repository.FindByAsync(x => x.Company.Id == companyId, nameof(Note.Employee));
         }
     }
 }

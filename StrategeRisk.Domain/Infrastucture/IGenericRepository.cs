@@ -12,6 +12,8 @@ namespace StrategeRisk.Domain.Infrastucture
 
         Task<IEnumerable<T>> FindByAsync(Expression<Func<T, bool>> filter);
 
+        Task<IEnumerable<T>> FindByAsync(Expression<Func<T, bool>> filter, params string[] navigationNames);
+
         Task<IEnumerable<T>> GetAsync(params string[] navigationNames);
         
         Task<T?> GetAsync(Expression<Func<T, bool>> filter);

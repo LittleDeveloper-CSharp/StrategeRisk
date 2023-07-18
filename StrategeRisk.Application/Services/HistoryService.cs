@@ -15,7 +15,7 @@ namespace StrategeRisk.Application.Services
 
         public async Task<IEnumerable<History>> GetAsync(int companyId)
         {
-            return await _historyRepository.FindByAsync(x => x.Company.Id == companyId);
+            return await _historyRepository.FindByAsync(x => x.Company.Id == companyId, nameof(History.StoreCity));
         }
     }
 }

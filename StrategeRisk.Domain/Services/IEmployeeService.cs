@@ -6,6 +6,8 @@ namespace StrategeRisk.Domain.Services
     {
         Task<IEnumerable<Employee>> GetAsync(int companyId);
 
+        Task<Employee> GetEmployee(int id);
+
         Task<bool> CreateAsync(int companyId, Employee employee);
 
         Task DeleteAsync(int id);

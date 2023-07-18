@@ -14,6 +14,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
+builder.Services.AddScoped<IEmployeePositionService, EmployeePositionService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IHistoryService, HistoryService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();

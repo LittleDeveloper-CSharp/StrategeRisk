@@ -4,6 +4,8 @@ namespace StrategeRisk.WebApp.Models
 {
     public class CompanyRowViewModel
     {
+        public int Id { get; set; }
+
         [Display(Name = "Company Name")]
         public string Name { get; set; }
 

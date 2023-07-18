@@ -9,6 +9,8 @@ namespace StrategeRisk.Domain.Models
 
         public string InvoiceNumber { get; set; } = null!;
 
+        public int EmployeeId { get; set; }
+
         public Employee Employee = null!;
 
         public Company Company = null!;

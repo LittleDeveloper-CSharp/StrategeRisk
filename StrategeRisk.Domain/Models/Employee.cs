@@ -16,6 +16,8 @@ namespace StrategeRisk.Domain.Models
 
         public DateTime BirthDate { get; set; }
 
+        public int PositionId { get; set; }
+
         public EmployeePosition Position { get; set; } = null!;
 
         public Company Company { get; set; } = null!;
