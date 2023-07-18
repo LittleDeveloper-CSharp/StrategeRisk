@@ -17,6 +17,8 @@ namespace StrategeRisk.WebApp.ApiControllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Post(NoteCreateDTO model)
         {
             var note = new Note
@@ -26,18 +28,19 @@ namespace StrategeRisk.WebApp.ApiControllers
             };
 
             var hasCreated = await _noteService.CreateAsync(model.CompanyId, note);
-            if (hasCreated)
+            if (!hasCreated)
                 return BadRequest();
 
-            return Ok();
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Delete(int id)
         {
             await _noteService.DeleteAsync(id);
 
-            return Ok();
+            return NoContent();
         }
     }
 }

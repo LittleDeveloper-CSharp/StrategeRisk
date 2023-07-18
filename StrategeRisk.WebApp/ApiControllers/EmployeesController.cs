@@ -39,6 +39,8 @@ namespace StrategeRisk.WebApp.ApiControllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Post(EmployeeCreateDTO model)
         {
             var employee = new Employee
@@ -51,13 +53,15 @@ namespace StrategeRisk.WebApp.ApiControllers
             };
 
             var hasCreated = await _employeeService.CreateAsync(model.CompanyId, employee);
-            if (hasCreated)
+            if (!hasCreated)
                 return BadRequest();
 
-            return Ok();
+            return NoContent();
         }
 
         [HttpPatch]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Patch(EmployeeUpdateDTO model)
         {
             var employee = new Employee
@@ -71,18 +75,19 @@ namespace StrategeRisk.WebApp.ApiControllers
             };
 
             var hasUpdated = await _employeeService.UpdateAsync(employee);
-            if (hasUpdated)
+            if (!hasUpdated)
                 return BadRequest();
 
-            return Ok();
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Delete(int id)
         {
             await _employeeService.DeleteAsync(id);
 
-            return Ok();
+            return NoContent();
         }
 
         [HttpGet("positions")]

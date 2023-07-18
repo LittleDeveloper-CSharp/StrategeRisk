@@ -11,8 +11,8 @@ namespace StrategeRisk.Domain.Models
 
         public int EmployeeId { get; set; }
 
-        public Employee Employee = null!;
+        public Employee Employee { get; set; } = null!;
 
-        public Company Company = null!;
+        public Company Company { get; set; } = null!;
     }
 }

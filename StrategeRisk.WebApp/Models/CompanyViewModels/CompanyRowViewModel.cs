@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace StrategeRisk.WebApp.Models
+namespace StrategeRisk.WebApp.Models.CompanyViewModels
 {
     public class CompanyRowViewModel
     {

@@ -34,13 +34,12 @@ namespace StrategeRisk.DataAccess
 
         public async Task<IEnumerable<T>> FindByAsync(Expression<Func<T, bool>> filter, params string[] navigationNames)
         {
-            var query = _dbSet.AsQueryable().Where(filter);
+            var query = _dbSet.AsQueryable();
             foreach (var navigationName in navigationNames)
-            {
                 query = query.Include(navigationName);
-            }
 
-            return await query.ToArrayAsync();
+            return await query.Where(filter)
+                .ToArrayAsync();
         }
 
         public async Task<IEnumerable<T>> GetAsync()

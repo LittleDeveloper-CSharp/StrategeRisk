@@ -48,6 +48,6 @@ app.MapSwagger();
 app.UseSwaggerUI();
 
 app.MapControllerRoute(
-    "default", 
-    "{controller=Home}/{action=Index}/{id?}");
+    "default",
+    "{controller=Company}/{action=Index}/{id?}");
 app.Run();
