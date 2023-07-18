@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StrategeRisk.Application.Services;
 using StrategeRisk.DataAccess;
