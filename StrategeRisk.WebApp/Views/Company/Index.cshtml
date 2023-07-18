@@ -1,13 +1,28 @@
 ﻿@model IEnumerable<StrategeRisk.WebApp.Models.CompanyViewModels.CompanyRowViewModel>
 
-<div>
+@{
+    ViewData["Title"] = "Companies";
+    ViewData["SectionName"] = "Tools";
+}
+
+<div class="companies__container">
     <div>
     </div>
     <div>
-        <table>
+        <table class="companies__container-table">
             <thead>
                 <tr>
                     <th>
+                        Company Name
+                    </th>
+                    <th>
+                        City
+                    </th>
+                    <th>
+                        State
+                    </th>
+                    <th>
+                        Phone
                     </th>
                 </tr>
             </thead>
@@ -16,7 +31,9 @@
                 {
                     <tr>
                         <td>
-                            @company.Name
+                            <a asp-action="Details" asp-route-id="@company.Id">
+                                @company.Name
+                            </a>
                         </td>
                         <td>
                             @company.City
@@ -33,3 +50,7 @@
         </table>
     </div>
 </div>
+
+@section Tools{
+    Я отработал
+}

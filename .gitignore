@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/StrategeRisk.WebApp/wwwroot/css/site.css
+/StrategeRisk.WebApp/wwwroot/css/site.min.css
