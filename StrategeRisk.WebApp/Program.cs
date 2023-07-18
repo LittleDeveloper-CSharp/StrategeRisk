@@ -9,6 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddMvc();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.Configure<RouteOptions>(opts=> opts.LowercaseUrls= true);
+
 builder.Services.AddDbContext<ApplicationDbContext>(
     options => options.UseInMemoryDatabase("StratageRisk"));
 
@@ -36,6 +41,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapSwagger();
+app.UseSwaggerUI();
 
 app.MapControllerRoute(
     "default", 

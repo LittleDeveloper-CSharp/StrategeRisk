@@ -2,7 +2,7 @@
 {
     public enum EmployeeTitle
     {
-        Mr,
+        Mr = 1,
         Mrs,
         Ms
     }
